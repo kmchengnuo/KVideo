@@ -5,14 +5,22 @@ import { join } from 'node:path';
 
 const projectRoot = process.cwd();
 
-test('popular tag management mode stays out of quick search and discovery grids', () => {
+test('popular features do not render the hardcoded quick search groups', () => {
+  const source = readFileSync(
+    join(projectRoot, 'components/home/PopularFeatures.tsx'),
+    'utf8',
+  );
+
+  assert.doesNotMatch(source, /CategoryQuickSearch/);
+});
+
+test('popular tag management mode stays out of discovery grids', () => {
   const source = readFileSync(
     join(projectRoot, 'components/home/PopularFeatures.tsx'),
     'utf8',
   );
 
   assert.match(source, /const isTagManagementMode = showTagManager;/);
-  assert.match(source, /!\s*isTagManagementMode && <CategoryQuickSearch/);
   assert.match(source, /!\s*isTagManagementMode && !effectiveRecommendSelected/);
   assert.match(source, /!\s*isTagManagementMode && \(/);
 });

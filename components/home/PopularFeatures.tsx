@@ -9,7 +9,6 @@
 import { useState } from 'react';
 import { TagManager } from './TagManager';
 import { MovieGrid } from './MovieGrid';
-import { CategoryQuickSearch } from './CategoryQuickSearch';
 import { useTagManager } from './hooks/useTagManager';
 import { usePopularMovies } from './hooks/usePopularMovies';
 import { usePersonalizedRecommendations } from './hooks/usePersonalizedRecommendations';
@@ -93,8 +92,6 @@ export function PopularFeatures({ onSearch }: PopularFeaturesProps) {
 
   return (
     <div className="animate-fade-in">
-      {!isTagManagementMode && <CategoryQuickSearch onSearch={onSearch} />}
-
       {/* Content Type Toggle (Capsule Liquid Glass - Fixed & Centered) */}
       {!isTagManagementMode && !effectiveRecommendSelected && (
         <div className="mb-10 flex justify-center">

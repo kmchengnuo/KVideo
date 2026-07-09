@@ -4,8 +4,18 @@
     "name": "KVideo",
     "branch": "main"
   },
-  "currentVersion": "4.9.9",
+  "currentVersion": "4.9.10",
   "releases": [
+    {
+      "version": "4.9.10",
+      "publishedAt": "2026-07-09",
+      "title": "移除首页顶部快捷搜索区",
+      "notes": [
+        "首页不再显示内容分类、电影类型、年份三组硬编码快捷搜索按钮。",
+        "推荐页顶部直接进入内容类型切换与后端标签列表，减少标签区域上方的无关占用。",
+        "更新标签管理视图回归测试，防止首页重新引用 CategoryQuickSearch。"
+      ]
+    },
     {
       "version": "4.9.9",
       "publishedAt": "2026-07-09",
